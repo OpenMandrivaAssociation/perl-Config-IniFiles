@@ -2,7 +2,7 @@
 Summary:	Config-IniFiles module for perl
 Name:		perl-%realname
 Version:	2.39
-Release:	%mkrel 3
+Release:	%mkrel 4
 License: 	GPL
 Group: 		Development/Perl
 Source: 	%realname-%version.tar.bz2
