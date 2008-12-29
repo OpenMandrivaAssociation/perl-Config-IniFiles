@@ -1,14 +1,16 @@
-%define		realname	Config-IniFiles
-Summary:	Config-IniFiles module for perl
-Name:		perl-%realname
-Version:	2.39
-Release:	%mkrel 4
+%define		module	Config-IniFiles
+
+Name:		perl-%module
+Version:	2.45
+Release:	%mkrel 1
+Summary:	A module for reading .ini-style configuration files
 License: 	GPL
 Group: 		Development/Perl
-Source: 	%realname-%version.tar.bz2
-URL:		http://search.cpan.org/dist/%realname/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root/
+URL:		http://search.cpan.org/dist/%module/
+Source:     http://www.cpan.org/modules/by-module/Config/%{module}-%{version}.tar.gz
 BuildArch:	noarch
+BuildRequires:  perl(Module::Build)
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This perl module allows you to access to config files written in the
@@ -18,25 +20,20 @@ This perl module allows you to access to config files written in the
 %setup -q -n Config-IniFiles-%{version}
 
 %build
-chmod 644 README IniFiles.pm
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+%{__perl} Build.PL installdirs=vendor
+./Build
 
 %check
-%make test
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+./Build test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
+./Build install destdir=%{buildroot}
 
-%makeinstall_std
-
+%clean
+rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
+%doc README
 %{perl_vendorlib}/Config
 %{_mandir}/*/*
-%doc README
-
-
