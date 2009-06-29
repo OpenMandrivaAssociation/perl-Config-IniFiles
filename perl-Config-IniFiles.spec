@@ -1,7 +1,7 @@
 %define		module	Config-IniFiles
 
 Name:		perl-%module
-Version:	2.51
+Version:	2.52
 Release:	%mkrel 1
 Summary:	A module for reading .ini-style configuration files
 License: 	GPL
