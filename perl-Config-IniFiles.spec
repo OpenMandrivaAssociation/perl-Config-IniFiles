@@ -1,23 +1,26 @@
-%define		module	Config-IniFiles
+%define	 upstream_name	  Config-IniFiles
+%define	 upstream_version 2.52
 
-Name:		perl-%module
-Version:	2.52
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
 Release:	%mkrel 1
+
 Summary:	A module for reading .ini-style configuration files
 License: 	GPL
 Group: 		Development/Perl
-URL:		http://search.cpan.org/dist/%module/
-Source:     http://www.cpan.org/modules/by-module/Config/%{module}-%{version}.tar.gz
-BuildArch:	noarch
-BuildRequires:  perl(Module::Build)
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+URL:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:    http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
+
+BuildRequires: perl(Module::Build)
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{relase}
+BuildArch: noarch
 
 %description
 This perl module allows you to access to config files written in the
 .ini style.
 
 %prep
-%setup -q -n Config-IniFiles-%{version}
+%setup -q -n Config-IniFiles-%{upstream_version}
 
 %build
 %{__perl} Build.PL installdirs=vendor
