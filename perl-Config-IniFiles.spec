@@ -12,6 +12,7 @@ Source0:	http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstrea
 BuildArch:	noarch
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(List::MoreUtils)
+BuildRequires:	perl(IO::Scalar)
 BuildRequires:	perl-devel
 
 %description
