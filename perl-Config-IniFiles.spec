@@ -13,9 +13,10 @@ BuildArch:	noarch
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(List::MoreUtils)
 BuildRequires:	perl(IO::Scalar)
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
-# FIXME this shouldn't be needed because we already require
-# perl(Module::Build) - but somehow ABF seems to get it wrong
+# Workaround for perl-CPAN prior to 5.26.1-2 incorrectly
+# providing perl(Module::Build)
 BuildRequires:	perl-Module-Build
 
 %description
