@@ -1,5 +1,5 @@
 %define upstream_name	 Config-IniFiles
-%define upstream_version 2.94
+%define upstream_version 2.98
 
 Summary:	A module for reading .ini-style configuration files
 Name:		perl-%{upstream_name}
