@@ -14,6 +14,9 @@ BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(List::MoreUtils)
 BuildRequires:	perl(IO::Scalar)
 BuildRequires:	perl-devel
+# FIXME this shouldn't be needed because we already require
+# perl(Module::Build) - but somehow ABF seems to get it wrong
+BuildRequires:	perl-Module-Build
 
 %description
 This perl module allows you to access to config files written in the
