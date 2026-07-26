@@ -1,5 +1,5 @@
 %define upstream_name	 Config-IniFiles
-%define version 3.000003
+%define version 3.002000
 
 Summary:	A module for reading .ini-style configuration files
 Name:		perl-%{upstream_name}
@@ -7,8 +7,8 @@ Version:	%{version}
 Release:	1
 License:	GPLv2
 Group:		Development/Perl
-Url:		https://metacpan.org/pod/Config::IniFiles
-Source0:	https://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{version}.tar.gz
+Url:		http://metacpan.org/release/Config-IniFiles
+Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/%{upstream_name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(List::MoreUtils)
