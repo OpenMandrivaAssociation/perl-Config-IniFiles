@@ -3,7 +3,7 @@
 
 Summary:	A module for reading .ini-style configuration files
 Name:		perl-%{upstream_name}
-Version:	%{version}
+Version:	3.003000
 Release:	1
 License:	GPLv2
 Group:		Development/Perl
